@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs tabs-only>
+  <ion-tab-bar slot="top">
+    <ion-tab-button (click)="prevFecha()">
+      <ion-icon name="arrow-back"></ion-icon>
+      <ion-label>Atras</ion-label>
+    </ion-tab-button>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-tab-button (click)="nextFecha()">
+      <ion-icon name="arrow-forward"></ion-icon>
+      <ion-label>Siguiente</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-tabs tabs-only2>
+  <ion-tab-bar slot="top">
+    <ion-tab-button tab="jornada">
+      <ion-icon name="football"></ion-icon>
+      <ion-label>Jornada</ion-label>
+    </ion-tab-button>
+    
+    <ion-tab-button tab="clasificacion">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Clasificacion</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

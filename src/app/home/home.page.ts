@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LigaService } from '../services/liga.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  constructor(private equipoService:LigaService) {}
 
-  constructor() {}
+  public nextFecha(){
+    this.equipoService.nextFecha();
+  }
+  public prevFecha(){
+    this.equipoService.prevFecha();
+  }
 
+  public get fecha(){
+    return this.equipoService.fecha;
+  }
 }

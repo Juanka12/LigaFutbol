@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <div class="ion-text-center">
+    <ion-title>Partido</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="ion-text-center">
+    <ion-label>{{partido.dia.diaSemana.toUpperCase()}} {{partido.dia.dia}}</ion-label>
+  </ion-item>
+  <ion-row class="ion-text-center">
+    <ion-col size="2" >{{partido.casa.name}}</ion-col>
+    <ion-col>{{partido.visitante.name}}</ion-col>
+  </ion-row>
+
+  <ion-row class="ion-text-center">
+    <ion-col size="2">{{partido.casa.golesF}}</ion-col>
+    <ion-col>{{partido.visitante.golesF}}</ion-col>
+  </ion-row>
+</ion-content>

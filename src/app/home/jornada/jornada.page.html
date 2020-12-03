@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="ion-text-center">
+    <ion-title>Jornada {{fecha}}</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let partido of jornadaActual" button (click)="pasarPartido(partido)"routerLink="/partido">
+    <ion-card-header class="ion-text-center">
+      <label>{{partido.casa.name}} VS {{partido.visitante.name}}</label>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <label>{{partido.casa.golesF}} - {{partido.visitante.golesF}}</label>
+    </ion-card-content>   
+    <ion-card-content class="ion-text-center">
+      <label>{{partido.dia.dia}}</label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

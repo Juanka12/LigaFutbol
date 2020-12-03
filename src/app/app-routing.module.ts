@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'partido',
+    loadChildren: () => import('./home/partido/partido.module').then( m => m.PartidoPageModule)
+  }
 ];
 
 @NgModule({

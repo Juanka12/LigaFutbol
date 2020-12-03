@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="ion-text-center">
+    <ion-title>Jornada {{fecha}}</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-text-center">
+    <ion-col size="5">Equipo</ion-col>
+    <ion-col>Puntos</ion-col>
+    <ion-col>GolesF</ion-col>
+    <ion-col>GolesC</ion-col>
+  </ion-row>
+
+  <ion-row  *ngFor="let item of equipos" class="ion-text-center">
+    <ion-col size="5">{{item.name}}</ion-col>
+    <ion-col>{{item.puntos}}</ion-col>
+    <ion-col >{{item.golesF}}</ion-col>
+    <ion-col >{{item.golesC}}</ion-col>
+  </ion-row>
+</ion-content>
