@@ -18,8 +18,9 @@
     <ion-col>{{partido.visitante.name}}</ion-col>
   </ion-row>
 
-  <ion-row class="ion-text-center">
-    <ion-col size="2">{{partido.casa.golesF}}</ion-col>
-    <ion-col>{{partido.visitante.golesF}}</ion-col>
+  <ion-row *ngFor="let item of partido.golesMinuto[0]; let i = index" class="ion-text-center">
+    <ion-col>{{partido.golesMinuto[0][i]}}</ion-col>
+    <ion-col>{{partido.golesMinuto[1][i]}}</ion-col>
+    <ion-col>Minuto</ion-col>
   </ion-row>
 </ion-content>

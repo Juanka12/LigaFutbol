@@ -26,13 +26,12 @@ export class LigaService {
     this.generateTeams();
     this.sortearJornadas();
     this.sortearResultados();
+    
    }
   
   private generateTeams() {
-    let va:Array<Equipo> = [];
     for (let index = 0; index < this.teamNames.length; index++) {
       this.equipos.push(new Equipo(this.teamNames[index],0,0,0));
-      va.push(new Equipo(this.teamNames[index],0,0,0));
     }
 
   }
@@ -88,13 +87,16 @@ export class LigaService {
     for (let index = 0; index < this.jornadas.length; index++) {
       this.resultados[index] = [];
      for (let j = 0; j < this.jornadas[index].length; j++) {
-       this.jornadas[index][j].sortearGoles();
-       var equipo1:Equipo = new Equipo(this.jornadas[index][j].casa.name,this.jornadas[index][j].casa.puntos,this.jornadas[index][j].casa.golesF,this.jornadas[index][j].casa.golesC);
-       var equipo2:Equipo = new Equipo(this.jornadas[index][j].visitante.name,this.jornadas[index][j].visitante.puntos,this.jornadas[index][j].visitante.golesF,this.jornadas[index][j].visitante.golesC);
+       var equipo1:Equipo = new Equipo(this.jornadas[index][j].casa.name,0,0,0);
+       var equipo2:Equipo = new Equipo(this.jornadas[index][j].visitante.name,0,0,0);
        var partido:Partido = new Partido(equipo1,equipo2);
+       this.jornadas[index][j].sortearGoles(partido);
        partido.dia = this.jornadas[index][j].dia;
+       partido.golesMinuto = this.jornadas[index][j].golesMinuto;
        this.jornadas[index][j] = partido;
+       
       }
+      
       for (let k = 0; k < this.equipos.length; k++) {
         this.resultados[index][k] = new Equipo(this.equipos[k].name,this.equipos[k].puntos,this.equipos[k].golesF,this.equipos[k].golesC);
       }

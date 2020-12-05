@@ -12,6 +12,7 @@ export class PartidoPage implements OnInit {
   constructor(private route:Router,private routeActive:ActivatedRoute) {
     this.routeActive.queryParamMap.subscribe(()=> {
       this.partido = this.route.getCurrentNavigation().extras.state.pasado;
+      
     })
   }
 

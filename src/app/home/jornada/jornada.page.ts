@@ -30,6 +30,7 @@ export class JornadaPage implements OnInit {
   }
 
   public pasarPartido(partido:Partido){
+    
     let va:Partido=partido;
     let extras:NavigationExtras={
       state:{
